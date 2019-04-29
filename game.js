@@ -1,6 +1,7 @@
 let playerScore = 0
 let computerScore = 0 //initialize player and computer scores
 let computerSelection = () => {
+    //Decide what the computer is going to do
     let sel = Math.random() *3
     sel = Math.ceil(sel);
     if(sel== 1) {
@@ -14,7 +15,7 @@ let computerSelection = () => {
 let playButton = document.getElementById("play");
 playButton.addEventListener("click", e => {
     let message = document.getElementById("displayMessage");
-    function playerSelection() {
+    function playerSelection() { // check what the player selected
         if(document.getElementById("rock").checked) {
             return "rock"
         }else if(document.getElementById("paper").checked) {
@@ -23,6 +24,7 @@ playButton.addEventListener("click", e => {
             return "scissors"
         }
     }
+    //logic for who wins/text color
     if(playerSelection()=="rock") {
         if(computerSelection() == "paper") {
             computerScore++
@@ -67,8 +69,8 @@ playButton.addEventListener("click", e => {
 
         }
     }
-    let score = document.getElementById("score")
-    score.textContent = `You: ${playerScore} Computer: ${computerScore}`
+    let score = document.getElementById("score"); 
+    score.textContent = `You: ${playerScore} Computer: ${computerScore}`;//set and update score for player/computer
     if(playerScore> computerScore) {
         score.style.color = "green"
     }else if(playerScore < computerScore) {
@@ -77,6 +79,3 @@ playButton.addEventListener("click", e => {
         score.style.color = "black"
     }
 });
-let score = document.getElementById("score")
-score.textContent = `You: ${playerScore} Computer: ${computerScore}`
-
