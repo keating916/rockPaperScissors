@@ -11,7 +11,6 @@ let computerSelection = () => {
         return "scissors"
     };
 };
-console.log("Great Job");
 let playButton = document.getElementById("play");
 playButton.addEventListener("click", e => {
     let message = document.getElementById("displayMessage");
@@ -28,37 +27,55 @@ playButton.addEventListener("click", e => {
         if(computerSelection() == "paper") {
             computerScore++
             message.textContent= "You lose! Paper Beats Rock"
+            message.style.color="red"
         }else if(computerSelection() == "scissors") {
             playerScore++
             message.textContent= "You Win! Rock Beats Scissors"
+            message.style.color="green"
         }else{
             message.textContent= "You both Picked Rock"
+            message.style.color="black";
         }
     }
     if(playerSelection()=="paper") {
         if(computerSelection() == "rock") {
             playerScore++
             message.textContent= "You Win! Paper Beats Rock"
+            message.style.color="green"
         }else if(computerSelection() == "scissors") {
             computerScore++
             message.textContent= "You lose! Scissors Beats Paper"
+            message.style.color="red"
         }else{
             message.textContent= "You both Picked Paper"
+            message.style.color="black";
+
         }
     }
     if(playerSelection()=="scissors") {
         if(computerSelection() == "rock") {
             computerScore++
             message.textContent= "You lose! Rock Beats Scissors"
+            message.style.color="red"
         }else if(computerSelection() == "paper") {
             playerScore++
             message.textContent= "You Win! Scissors Beats Paper"
+            message.style.color="green"
         }else{
             message.textContent= "You both Picked Scissors"
+            message.style.color="black";
+
         }
     }
     let score = document.getElementById("score")
     score.textContent = `You: ${playerScore} Computer: ${computerScore}`
+    if(playerScore> computerScore) {
+        score.style.color = "green"
+    }else if(playerScore < computerScore) {
+        score.style.color = "red"
+    }else{
+        score.style.color = "black"
+    }
 });
 let score = document.getElementById("score")
 score.textContent = `You: ${playerScore} Computer: ${computerScore}`
