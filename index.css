@@ -1,0 +1,17 @@
+body {
+        display: flex;
+        height: 300px; /* Or whatever */
+        margin: auto;
+        flex-flow: column;
+      }
+      
+h1 {
+        width: auto;  /* Or whatever */
+        height: 100px; /* Or whatever */
+        margin: auto;  /* Magic! */
+}
+div {
+        width: 100px;  /* Or whatever */
+        height: 100px; /* Or whatever */
+        margin: auto;  /* Magic! */
+      }
